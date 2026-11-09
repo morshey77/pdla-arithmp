@@ -1,10 +1,12 @@
-import math
 import pytest
-from arithmp.parser import Parser 
+
+from arithmp.parser import Parser
+
 
 @pytest.fixture
 def parser():
     return Parser()
+
 
 def test_basic_arithmetic(parser):
     assert parser.parse("3 + 4") == 7.0
@@ -20,7 +22,9 @@ def test_unary_operators(parser):
 
 
 def test_power_operator(parser):
-    assert parser.parse("2 ^ 3") == 8.0  # Adjust operator if your lark grammar uses ** or ^
+    assert (
+        parser.parse("2 ^ 3") == 8.0
+    )  # Adjust operator if your lark grammar uses ** or ^
 
 
 def test_invalid_syntax(parser):
